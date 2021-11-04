@@ -3,13 +3,15 @@ public class Animals {
 
     String Name;
     int Age;
-    int size;
+    String Sex;
+public Animals(){
+}
 
 
-    public Animals() {
+    public Animals(String Name,int Age,String Sex) {
         this.Name=Name;
         this.Age=Age;
-        this.size=size;
+        this.Sex=Sex;
 
     }
 
@@ -22,8 +24,8 @@ public class Animals {
 
     }
 
-    public void setsize(int s){
-        this.size= s;
+    public void setsize(String s){
+        this.Sex= s;
 
     }
     public String getName()
@@ -34,8 +36,8 @@ public class Animals {
     {
         return Age;
     }
-    public int getsize()
+    public String getSex()
     {
-        return size;
+        return Sex;
     }
     }
