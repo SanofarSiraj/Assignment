@@ -4,7 +4,7 @@ public class Cheetah extends Animals {
 
     String Favorite_food;
     String Favorite_Activity;
-    public Cheetah(){
+    public Cheetah(String Name,int Age,String Sex,String Favorite_Activity,String Favorite_Food){
         this.Favorite_Activity=Favorite_Activity;
         this.Favorite_food=Favorite_food;
     }

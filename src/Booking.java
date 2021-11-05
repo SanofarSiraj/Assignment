@@ -8,25 +8,33 @@ import java.util.HashMap;
 import java.util.Scanner;
 // Menu, Description, choices, questions, Edits,
 
-public class Booking extends Animals {
+public class Booking {
     ArrayList<Animals> Bookingdetails = new ArrayList<Animals>();
     ArrayList<String> Myarray = new ArrayList<String>();
+    ArrayList<Rooms> Roomsarray = new ArrayList<Rooms>();
 
 
-    Animals myobj3;
-    Animals myobj4;
-    Animals myobj5;
+
     Rooms myobj0;
     Rooms myobj1;
     Rooms myobj2;
 
     public Booking() {
-        myobj0 = new Rooms(1, "50sqm", "Its a dark room and has a king size bed.");
-        myobj1 = new Rooms(2, "70sqm", "Its a bright room and has a queen size bed.");
-        myobj2 = new Rooms(3, "100sqm", "Its a large room and has a wide space .");
-        myobj3 = new Animals("Tiger", 7, "M");
-        myobj4 = new Animals("Lion", 10, "F");
-        myobj5 = new Animals("Cheetah", 13, "M");
+
+        myobj0 = new Rooms(1, "50sqm", "Its a dark room and has a king size bed.", true);
+        myobj1 = new Rooms(2, "70sqm", "Its a bright room and has a queen size bed.", true);
+        myobj2 = new Rooms(3, "100sqm", "Its a large room and has a wide space .", true);
+        Animal1=new Tiger("Tiger",7,"M","e","r");
+        Animal2=new Lion("Lion",10,"M","e","d");
+        Animal3=new Cheetah("Cheetah",7,"M","r","t");
+        Roomsarray.add(myobj0);
+        Roomsarray.add(myobj1);
+        Roomsarray.add(myobj2);
+        Bookingdetails.add(Animal1);
+        Bookingdetails.add(Animal2);
+        Bookingdetails.add(Animal3);
+
+        System.out.println(Roomsarray.get(0).getRoomNumber());
 
         menu();
         new Rooms();
@@ -83,7 +91,10 @@ public class Booking extends Animals {
 
     public void bookingInfo() {
         System.out.println("Enter your Name");
-        String name = getUserString();
+        String name = getUserString().toLowerCase();
+        if(name.equals("tiger")){
+            Animal1.setName(name);
+        }
         System.out.println("Enter your Age");
         int age = getUserInt();
         System.out.println("Enter your Sex");
@@ -97,79 +108,87 @@ public class Booking extends Animals {
         System.out.println("2. Classic");
         System.out.println("3. Suit");
         int menu = getUserInt();
-        boolean programRunning = true;
-        if (menu == 1) {
-            System.out.println("Standard room Choosen");
-            System.out.println(myobj0);
 
-        }
-        if (menu == 2) {
-            System.out.println("Classic room Choosen");
-            System.out.println(myobj1);
-        }
-        if (menu == 3) {
-            System.out.println("Suite room Choosen");
-            System.out.println(myobj2);
+       /* for (int i = 0; i < Bookingdetails.size(); i++) {
+            if (Roomsarray.get(i).getGuest().getName().equals(name)) {
+                System.out.println("The room is already booked");
 
-        }
-        /*switch(menu){
-            case 1 -> {
-                System.out.println("Standard room Choosen");
-                HotellRooms();
-                System.out.println("You are now booked in a Standard room");
+            }*/
 
-                break;
+                if(menu==1){
+                    Roomsarray.get(0).setGuest(Animal1);
+                    Roomsarray.get(0).getGuest().getName();
+                    System.out.println("Room no:"+Roomsarray.get(0).getRoomNumber()+"guestname"+Roomsarray.get(0).getGuest().getName());
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+            //Bookingdetails.get(0).setName(name);
+
+
+
+        /*
+
+
+                //}
+
             }
-            case 2 -> {
-                System.out.println("Classic room Choosen");
-                HotellRooms();
-                System.out.println("You are now booked in a Classic room");
-                break;
+            else{
+
+
+               // boolean programRunning = true;
+                Myarray.add(name);
+                System.out.println();
+                System.out.println();
+                if (menu == 1) {
+                    System.out.println("Standard room Choosen");
+                    System.out.println("Room number : " + myobj0.getRoomNumber());
+                    Roomsarray.add(myobj0);
+
+                }
+                else if (menu == 2) {
+                    System.out.println("Classic room Choosen");
+                    System.out.println("Room number : " + myobj1.getRoomNumber());
+                    Roomsarray.get(1).getGuest().setName(name);
+                }
+                else if (menu == 3) {
+                    System.out.println("Suite room Choosen");
+                    System.out.println("Room number : " + myobj2.getRoomNumber());
+                    Roomsarray.get(2).getGuest().setName(name);
+                }
+
+
             }
-            case 3 -> {
-                System.out.println("Suite room Choosen");
-                HotellRooms();
-                System.out.println("You are now booked in a Suite room");
-                break;
-            }
+
+
         }*/
-        System.out.println("Your booking details will be listed below");
+            System.out.println("Your booking details will be listed below");
         System.out.println(Bookingdetails + "\n" + name + "\n" + age + "\n" + Favorite_food + "\n" + Favorite_activity);
 
 
-        //if (name.equals("Tiger")){
-        Bookingdetails.add(myobj3);
-        //}
-        //else if (name.equals("Lion")){
-        Bookingdetails.add(myobj4);
-        //}
-        //else if (name.equals("Cheetah")){
-        Bookingdetails.add(myobj5);
-        //}
 
-        Myarray.add(name);
-        System.out.println();
-        System.out.println();
 
-        for (int i = 0; i < Myarray.size(); i++) {
-            System.out.println(Myarray.get(i));
 
-            if (Myarray.equals(Bookingdetails.get(i))) {
-                System.out.println("The room is already booked");
-            }
+
+    }
+
+
+        public static String getUserString() {
+            String userInput;
+
+            Scanner getUserString1 = new Scanner(System.in);
+             userInput = getUserString1.nextLine();
+            return userInput;
         }
-    }
-
-
-    public void CheckOut() {
-        int date;
-    }
-
-    public static String getUserString() {
-        Scanner getUserString = new Scanner(System.in);
-        String userInput = getUserString.nextLine();
-        return userInput;
-    }
 
     public static int getUserInt() {
         Scanner getUserInt = new Scanner(System.in);

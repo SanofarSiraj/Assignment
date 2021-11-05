@@ -3,7 +3,7 @@ public class Lion extends Animals{
     String Favorite_food;
     String Favorite_Activity;
 
-    public Lion(){
+    public Lion(String Name,int Age,String Sex,String Favorite_Activity,String Favorite_Food){
         this.Favorite_Activity=Favorite_Activity;
         this.Favorite_food=Favorite_food;
     }
