@@ -1,12 +1,13 @@
-public class Classic extends Rooms {
+public class suite extends Rooms {
 
-
-    public Classic (String roomName, String RoomDimension, String Description,boolean Roomavailability,int Roomquantity) {
+    public suite (int roomNumber,String roomName, String RoomDimension, String Description,boolean Roomavailability,int Roomquantity) {
         this.roomName = roomName;
         this.RoomDimension = RoomDimension;
         this.Description = Description;
         this.Roomavailability=Roomavailability;
         this.Roomquantity=Roomquantity;
+        this.RoomNumber=roomNumber;
+
 
     }
     public void describe(){

@@ -8,9 +8,6 @@ public class Rooms {
     int Roomquantity;
     String roomName;
 
-
-
-
     public Rooms(int roomNumber,String roomName ,String RoomDimension, String Description,boolean Roomavailability,int Roomquantity) {
         this.RoomNumber = roomNumber;
         this.roomName = roomName;
@@ -18,18 +15,13 @@ public class Rooms {
         this.Description = Description;
         this.Roomavailability=Roomavailability;
         this.Roomquantity=Roomquantity;
-
-
     }
-
-
     public Rooms() {
 
     }
 
     public void setRoomNumber(int RN) {
         this.RoomNumber = RN;
-
     }
 
     public String getRoomName(){
@@ -38,9 +30,7 @@ public class Rooms {
 
     public void setRoomDimension(String RD) {
         this.RoomDimension = RD;
-
     }
-
     public void setDescription(String D) {
         this.Description = D;
 
@@ -51,14 +41,9 @@ public class Rooms {
 
     }
 
-    //public void setGuest(Animals NewGuest) {
-        //guest=NewGuest;
-    //}
-
     public void setRoomquantity(int Roomquantity) {
         this.Roomquantity=Roomquantity;
     }
-
 
     public int getRoomNumber() {
         return RoomNumber;
@@ -71,27 +56,20 @@ public class Rooms {
     public String getDescription() {
         return Description;
     }
-
     public Boolean getRoomavailability(Boolean RA) {
-       return Roomavailability;
+        return Roomavailability;
 
     }
-
-    //public Animals getGuest() {
-        //return guest;
-    //}
-
     public int getRoomquantity() {
         return Roomquantity;
     }
 
     public void describe(){
-        System.out.println("Welcome to Animal hotel");
-        System.out.println("The Animal hotel has three different room categories." +
-                "It has good ventilation and sufficient space for the animals to play.");
-        System.out.println("1.Standard");
-        System.out.println("2.Classic");
-        System.out.println("3.Suite");
+        System.out.print("Welcome to Animal hotel");
+        System.out.print("The Animal hotel has three different room categories." + "It has good ventilation and sufficient space for the animals to play.");
+        System.out.print("1.Standard");
+        System.out.print("2.Classic");
+        System.out.print("3.Suite");
     }
 
 }

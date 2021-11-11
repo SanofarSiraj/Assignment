@@ -12,6 +12,10 @@ public class Tiger extends Animals {
         this.Sex=Sex;
     }
 
+    public Tiger() {
+
+    }
+
     public void setFavorite_food(String F){
         this.Favorite_food= F;
 
