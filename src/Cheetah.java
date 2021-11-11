@@ -21,10 +21,12 @@ public class Cheetah extends Animals {
 
     public String getFavorite_food()
     {
+
         return Favorite_food;
     }
     public String getFavorite_Activity()
     {
+
         return Favorite_Activity;
     }
 
