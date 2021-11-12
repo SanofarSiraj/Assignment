@@ -9,7 +9,6 @@ public class Booking {//All information about rooms, objects for the diff rooms 
     ArrayList<Rooms> Roomsarray = new ArrayList<Rooms>();
     HashMap<Integer, String> roomAlloc;//Hash map to link room no and type.
     int typeOfAnimal;
-    int Name;
     String Name1 = null;
     int age;
     String sex = null;
@@ -87,7 +86,6 @@ public class Booking {//All information about rooms, objects for the diff rooms 
                 }
                 case 7 -> {
                     filterbooking();
-                    getUserString();
                     break;
                 }
 
@@ -152,8 +150,6 @@ public class Booking {//All information about rooms, objects for the diff rooms 
                     System.out.println("The room is available");
                     Roomsarray.get(i).Roomquantity = Roomsarray.get(i).Roomquantity - 1;
                     break;
-                } else if (i >= Roomsarray.size() - 1) {
-                    System.out.println("The room is not available");
                 }
             } else if (i >= Roomsarray.size() - 1) {
                 System.out.println("The room is not available");
@@ -174,7 +170,6 @@ public class Booking {//All information about rooms, objects for the diff rooms 
                     + Bookingdetails.get(i).getRoomType());
 
         }
-
     }
 
     public void filterbooking() { // This method is used to search booking by single string.
@@ -226,9 +221,6 @@ public class Booking {//All information about rooms, objects for the diff rooms 
         System.out.println("Update your fav activity :");
         String activityUpdate = getUserString();
         editBookingDetails(name, foodUpdate, activityUpdate, animalDetails);
-        //animalDetails = bookingUserInformation(bookingName);
-        //updateRoomAllocation(animalDetails,bookingName);
-
     }
 
     private void checkOut() {
@@ -236,7 +228,6 @@ public class Booking {//All information about rooms, objects for the diff rooms 
         String bookingName = getUserString();
         Bookingdetails.removeIf(a -> a.getName().equals(bookingName));
         System.out.println(bookingName + " have been checked out");
-
     }
 
     private void roomReservation(int roomNum) {
